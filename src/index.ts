@@ -34,8 +34,7 @@ commander
 // 加载命令
 deploy(commander);
 
-// 当以 faas 为指令执行时自动解析命令行参数
-if (process.argv[1].endsWith('faas')) {
+if (process.argv[0] !== 'fake') {
   commander.parse(process.argv);
 }
 

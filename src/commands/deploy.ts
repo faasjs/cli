@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 import Deployer from '@faasjs/deployer';
 
 export async function action (name: string, opts: {
-  staging: string;
+  env: string;
 }) {
   const logger = new Logger('@faasjs/cli/deploy');
 
@@ -25,7 +25,7 @@ export async function action (name: string, opts: {
 
   logger.debug(path);
 
-  const deployer = new Deployer(process.env.faasRoot, path, opts.staging);
+  const deployer = new Deployer(process.env.faasRoot, path, opts.env);
 
   const res = await deployer.build();
   return deployer.deploy(res);
@@ -36,7 +36,7 @@ export default function (program: Command) {
     .command('deploy <name>')
     .name('deploy')
     .description('发布')
-    .option('-e, --env', '发布环境', 'testing')
+    .option('-e, --env [staging]', '发布环境', 'testing')
     .on('--help', function () {
       console.log(`
 Examples:
