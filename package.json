@@ -1,6 +1,6 @@
 {
   "name": "@faasjs/cli",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,14 +20,14 @@
     "lib"
   ],
   "dependencies": {
-    "@faasjs/deployer": "0.0.0.alpha.4",
+    "@faasjs/deployer": "beta",
     "commander": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
     "@babel/preset-env": "*",
     "@babel/preset-typescript": "*",
-    "@faasjs/eslint-config-recommended": "0.0.0-alpha.1",
+    "@faasjs/eslint-config-recommended": "beta",
     "@types/debug": "*",
     "@types/jest": "*",
     "@types/node": "*",
