@@ -3,13 +3,7 @@ import Logger from '@faasjs/logger';
 import { existsSync } from 'fs';
 import deploy from './commands/deploy';
 
-// 输出 TestCase
-import TestCase from './helpers/test_case';
-exports.TestCase = TestCase;
-
-// 输出命令行
 const commander: Command = new Command();
-
 const logger = new Logger('@faasjs/cli');
 
 commander
