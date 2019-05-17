@@ -33,7 +33,7 @@ commander
 // 加载命令
 deploy(commander);
 
-if (process.argv[0] !== 'fake') {
+if (!process.env.CI && process.argv[0] !== 'fake') {
   commander.parse(process.argv);
 }
 
