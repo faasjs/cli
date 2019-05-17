@@ -23,7 +23,7 @@
     "@babel/core": "*",
     "@babel/preset-env": "*",
     "@babel/preset-typescript": "*",
-    "@faasjs/deployer": "^0.0.0-alpha.7",
+    "@faasjs/deployer": "beta",
     "@faasjs/eslint-config-recommended": "beta",
     "@types/debug": "*",
     "@types/jest": "*",
