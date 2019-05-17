@@ -16,6 +16,10 @@ export async function action (name: string, opts: {
     process.env.faasRoot += '/';
   }
 
+  if (!existsSync(process.env.faasRoot + 'config/providers/' + opts.env + '.yaml')) {
+    throw Error(`Config not found: ${process.env.faasRoot}config/providers/${opts.env}.yaml'}`);
+  }
+
   let path = process.env.faasRoot + name;
 
   if (!existsSync(path)) {
@@ -36,11 +40,11 @@ export default function (program: Command) {
     .command('deploy <name>')
     .name('deploy')
     .description('发布')
-    .option('-e, --env [staging]', '发布环境', 'testing')
+    .option('-e, --env <staging>', '环境', 'testing')
     .on('--help', function () {
       console.log(`
 Examples:
-  yarn deploy services/demo.flow.ts
+  yarn deploy services/demo.flow.ts -e testing
   yarn deploy services/demo.flow.ts -e production`);
     })
     .action(action);
