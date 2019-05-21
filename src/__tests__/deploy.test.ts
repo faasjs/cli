@@ -18,7 +18,7 @@ describe('deploy', function () {
   });
 
   test('should work', async function () {
-    const res = await action('services/basic.flow.ts', { env: 'testing' });
+    const res = await action('services/basic.flow.ts');
 
     expect(res).toBeTruthy();
   }, 30000);

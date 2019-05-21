@@ -14,14 +14,14 @@ describe('root', function () {
   test('without root', function () {
     program.parse(['fake', 'faas']);
 
-    expect(process.env.faasRoot).toBeUndefined();
+    expect(process.env.FaasRoot).toBeUndefined();
   });
 
   test('with root', function () {
     const root = process.cwd() + '/services';
     program.parse(['fake', 'faas', '-r', root]);
 
-    expect(process.env.faasRoot).toEqual(root);
+    expect(process.env.FaasRoot).toEqual(root + '/');
   });
 
   test('with wrong root', function () {
