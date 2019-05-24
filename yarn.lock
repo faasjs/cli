@@ -695,6 +695,14 @@
     "@faasjs/deep_merge" beta
     "@faasjs/logger" beta
 
+"@faasjs/load@beta":
+  version "0.0.0-alpha.3"
+  resolved "https://registry.npmjs.org/@faasjs/load/-/load-0.0.0-alpha.3.tgz#3b488cf395bc9453b83c889f6e39cb6c2b6294f1"
+  integrity sha512-sSqgL4V+3xY6P1zka2Qdw3mNMo5c0P2JMOTdD9lidrnJn6TZmrqyS2Nd/3mBFy4GWj0PQqy5SaTbVVZABf3BWw==
+  dependencies:
+    "@faasjs/deep_merge" beta
+    js-yaml "*"
+
 "@faasjs/logger@beta":
   version "0.0.0-alpha.2"
   resolved "https://registry.npm.taobao.org/@faasjs/logger/download/@faasjs/logger-0.0.0-alpha.2.tgz#f318ce9acf5f988bfc7f4fd5e5687dad537cbf44"
@@ -724,6 +732,25 @@
   integrity sha1-+EU17q/DykhjWEN82nG/y+Nse8s=
   dependencies:
     "@faasjs/logger" beta
+
+"@faasjs/test@beta":
+  version "0.0.0-alpha.7"
+  resolved "https://registry.npmjs.org/@faasjs/test/-/test-0.0.0-alpha.7.tgz#32c08f4fb99765ab944cf3a4ebb722340313b8c8"
+  integrity sha512-wqXzWRtPw/qlznkqBz8g9LCqWibmoGsu3J85ChvvHZF8HRDqjPg5sm6wSJZnXYb+7P6+tU5VSWa458X5bOuVew==
+  dependencies:
+    "@babel/core" "*"
+    "@babel/preset-env" "*"
+    "@babel/preset-typescript" "*"
+    "@faasjs/eslint-config-recommended" beta
+    "@faasjs/load" beta
+    "@faasjs/trigger-http" beta
+    "@types/debug" "*"
+    "@types/jest" "*"
+    "@types/node" "*"
+    babel-jest "*"
+    jest "*"
+    jsdoc-babel "*"
+    jsdoc-to-markdown "*"
 
 "@faasjs/trigger-http@beta":
   version "0.0.0-alpha.5"
