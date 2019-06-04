@@ -1,16 +1,12 @@
 import { Command } from 'commander';
 import Logger from '@faasjs/logger';
 import { existsSync } from 'fs';
-import Deployer from '@faasjs/deployer';
+import { Deployer } from '@faasjs/deployer';
 import { defaultsEnv } from '../helper';
 
 export async function action (name: string) {
   defaultsEnv();
   const logger = new Logger('@faasjs/cli/deploy');
-
-  if (!existsSync(process.env.FaasRoot + 'config/providers/' + process.env.FaasEnv + '.yaml')) {
-    throw Error(`Config not found: ${process.env.FaasRoot}config/providers/${process.env.FaasEnv}.yaml'}`);
-  }
 
   let path = process.env.FaasRoot + name;
 
@@ -21,10 +17,15 @@ export async function action (name: string) {
 
   logger.debug(path);
 
-  const deployer = new Deployer(process.env.FaasRoot!, path, process.env.FaasEnv);
+  const deployer = new Deployer({
+    root: process.env.FaasRoot!,
+    filename: path,
+    env: process.env.FaasEnv
+  });
 
-  const res = await deployer.build();
-  return deployer.deploy(res);
+  await deployer.deploy();
+
+  return true;
 }
 
 export default function (program: Command) {
@@ -35,8 +36,8 @@ export default function (program: Command) {
     .on('--help', function () {
       console.log(`
 Examples:
-  yarn deploy services/demo.flow.ts -e testing
-  yarn deploy services/demo.flow.ts -e production`);
+  yarn deploy services/demo.func.ts -e testing
+  yarn deploy services/demo.func.ts -e production`);
     })
     .action(action);
 }

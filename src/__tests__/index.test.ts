@@ -18,7 +18,7 @@ describe('root', function () {
   });
 
   test('with root', function () {
-    const root = process.cwd() + '/services';
+    const root = process.cwd() + '/src';
     program.parse(['fake', 'faas', '-r', root]);
 
     expect(process.env.FaasRoot).toEqual(root + '/');
