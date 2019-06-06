@@ -1,4 +1,6 @@
 defaults:
+  deploy:
+    env: testing
   providers:
     tencentcloud:
       type: '@faasjs/tencentcloud'

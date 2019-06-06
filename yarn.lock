@@ -650,9 +650,9 @@
     minimist "^1.2.0"
 
 "@faasjs/cloud_function@beta":
-  version "0.0.0-alpha.5"
-  resolved "https://registry.npmjs.org/@faasjs/cloud_function/-/cloud_function-0.0.0-alpha.5.tgz#13b91c4bba81b0c25486e3219580b5b34adccba9"
-  integrity sha512-NRlqEkE1Nhm9ybLYxmfi06fsSKponfmUttYKEu7r7ANGL4tYYMWXBz13KAKxO8ih93blx59fIn6La4LItPIrjg==
+  version "0.0.0-alpha.9"
+  resolved "https://registry.npmjs.org/@faasjs/cloud_function/-/cloud_function-0.0.0-alpha.9.tgz#0dec07886779bdf36441ed72b676e3a7231c8259"
+  integrity sha512-FxbLDtydUp6wTcjnaA8Ibm0lZk2Todd6MYCgojGYjs4eqkc+BM8gEYtxnBBPmzusN1kH2nK4b0SS7YnPt+id3A==
   dependencies:
     "@faasjs/deep_merge" beta
 
@@ -662,9 +662,9 @@
   integrity sha512-etjbMUDZRHLo1DMQnTb8ZVhB/XKuitnx3gcW6u/nDPwFk6ujKqJzL2mp1cnT+MQWBxMR3NPk+fDWl8pH2KxHDQ==
 
 "@faasjs/deployer@beta":
-  version "0.0.0-alpha.15"
-  resolved "https://registry.npmjs.org/@faasjs/deployer/-/deployer-0.0.0-alpha.15.tgz#8141f7640c158db2f2f715d421a14a15be20366d"
-  integrity sha512-UR9Wpw0PT3Bud/Dwd+6z4vMWjw1vPMMDGz6egA/Zcz17vzzvbFYHxw9lirCHeuRhic8HEPo7Hjxo4phnLrebew==
+  version "0.0.0-alpha.16"
+  resolved "https://registry.npmjs.org/@faasjs/deployer/-/deployer-0.0.0-alpha.16.tgz#6ad6aaf09a3a5de2e1a877e3bd95d99df46122cf"
+  integrity sha512-3W/aOiZdYH59bUMosN4Ly8aWcL85f8C/oA9D9WsSXSO/YQPO7M5ghIVRFlXNmGaaekb3iop0eK8d3rXjHTOXwA==
   dependencies:
     "@faasjs/cloud_function" beta
     "@faasjs/tencentcloud" beta
@@ -681,12 +681,17 @@
     typescript "*"
 
 "@faasjs/func@beta":
-  version "0.0.0-alpha.8"
-  resolved "https://registry.npmjs.org/@faasjs/func/-/func-0.0.0-alpha.8.tgz#2eef1c47c1e988a6d3acc714e4db7b0c3040014e"
-  integrity sha512-MG3XjMgQtwnkWbdtp+x3scqJa3wjjjUHvmTTdCPff3B5XdpBDaHORADU3bK8n10u5XDkyKJ9QFhMcFuyxCUQHg==
+  version "0.0.0-alpha.14"
+  resolved "https://registry.npmjs.org/@faasjs/func/-/func-0.0.0-alpha.14.tgz#d23b621616f90515b36e64437ab6be02e99a02b2"
+  integrity sha512-gODbRVtU+bp0PAUgf6V9/p797DjmYAPHNX4jfMkTFFERycQM5Ffkr21J+G3DTUTFlpXSRfRy0gcR695LySC5Eg==
   dependencies:
     "@faasjs/deep_merge" beta
     "@faasjs/logger" beta
+
+"@faasjs/http@beta":
+  version "0.0.0-alpha.8"
+  resolved "https://registry.npmjs.org/@faasjs/http/-/http-0.0.0-alpha.8.tgz#34a0acee8064f323ce2addcf82b722e04e463fa7"
+  integrity sha512-5UXvFR/bxezZPzQicxCUqzYXCSNTczGGizpdy5gfpFWSLDv8s375UxjC/hs9/79FRFsh3fCrS1J8BcCz8cvlLQ==
 
 "@faasjs/load@beta":
   version "0.0.0-alpha.16"
@@ -712,25 +717,25 @@
     "@faasjs/logger" beta
 
 "@faasjs/tencentcloud@beta":
-  version "0.0.0-alpha.6"
-  resolved "https://registry.npmjs.org/@faasjs/tencentcloud/-/tencentcloud-0.0.0-alpha.6.tgz#2f782b49fd5f1e9f358637985938be89bbad13c8"
-  integrity sha512-lnGNP39W5bimlCgrvhYa1NbKQWIepwhtF+rXxMaljfnKcA10vLPqupY5AQbns0Lkco6tIx9ujCmHugRE2yUVfg==
+  version "0.0.0-alpha.18"
+  resolved "https://registry.npmjs.org/@faasjs/tencentcloud/-/tencentcloud-0.0.0-alpha.18.tgz#1a25a739b6dc0e01a55984967664500de03178e8"
+  integrity sha512-P17jfNSrYrDEkKsNoHPUHa1B84A7V98vb2Eh9xZy+brwHaBO2oFE7lMc97HB8i22rgdZEHNQ8mDqF2Oy9fP0Ow==
   dependencies:
     "@faasjs/load" beta
     "@faasjs/request" beta
     cos-nodejs-sdk-v5 "*"
 
 "@faasjs/test@beta":
-  version "0.0.0-alpha.7"
-  resolved "https://registry.npmjs.org/@faasjs/test/-/test-0.0.0-alpha.7.tgz#32c08f4fb99765ab944cf3a4ebb722340313b8c8"
-  integrity sha512-wqXzWRtPw/qlznkqBz8g9LCqWibmoGsu3J85ChvvHZF8HRDqjPg5sm6wSJZnXYb+7P6+tU5VSWa458X5bOuVew==
+  version "0.0.0-alpha.14"
+  resolved "https://registry.npmjs.org/@faasjs/test/-/test-0.0.0-alpha.14.tgz#21e4b27e668e9a6fcc84513b32fb51f9214c362f"
+  integrity sha512-Pq43A0HyuaoCLlVEwHWlbUMcgD6b+ptnOA6LJKmKZw1BOcnrEJoqanKWg5xrPX+j0zIFPYKOGiTap9cY0+W0kg==
   dependencies:
     "@babel/core" "*"
     "@babel/preset-env" "*"
     "@babel/preset-typescript" "*"
     "@faasjs/eslint-config-recommended" beta
+    "@faasjs/http" beta
     "@faasjs/load" beta
-    "@faasjs/trigger-http" beta
     "@types/debug" "*"
     "@types/jest" "*"
     "@types/node" "*"
@@ -738,11 +743,6 @@
     jest "*"
     jsdoc-babel "*"
     jsdoc-to-markdown "*"
-
-"@faasjs/trigger-http@beta":
-  version "0.0.0-alpha.8"
-  resolved "https://registry.npmjs.org/@faasjs/trigger-http/-/trigger-http-0.0.0-alpha.8.tgz#2e0361f9f4c4599c046eefd71b73fe3b05b98ee4"
-  integrity sha512-UrWtNHoNdqmaeYIN+rP5N1KGmQRrQKyDjA4MBu3fo0Uv2e7qBSYWnOYCk/+7Sc2JCyXPDYd/6OWY+mCE6TY3JA==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
@@ -965,15 +965,10 @@
   dependencies:
     "@types/jest-diff" "*"
 
-"@types/js-yaml@*":
-  version "3.12.1"
-  resolved "https://registry.npmjs.org/@types/js-yaml/-/js-yaml-3.12.1.tgz#5c6f4a1eabca84792fbd916f0cb40847f123c656"
-  integrity sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-
 "@types/node@*", "@types/node@^12.0.3":
-  version "12.0.4"
-  resolved "https://registry.npmjs.org/@types/node/-/node-12.0.4.tgz#46832183115c904410c275e34cf9403992999c32"
-  integrity sha512-j8YL2C0fXq7IONwl/Ud5Kt0PeXw22zGERt+HSSnwbKOJVsAGkEz3sFCYwaF9IOuoG1HOtE0vKCj6sXF7Q0+Vaw==
+  version "12.0.5"
+  resolved "https://registry.npmjs.org/@types/node/-/node-12.0.5.tgz#ac14404c33d1a789973c45379a67f7f7e58a01b9"
+  integrity sha512-CFLSALoE+93+Hcb5pFjp0J1uMrrbLRe+L1+gFwerJ776R3TACSF0kTVRQ7AvRa7aFx70nqYHAc7wQPlt9kY2Mg==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -1383,9 +1378,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30000971:
-  version "1.0.30000971"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000971.tgz#d1000e4546486a6977756547352bc96a4cfd2b13"
-  integrity sha512-TQFYFhRS0O5rdsmSbF1Wn+16latXYsQJat66f7S7lizXW1PVpWJeZw9wqqVLIjuxDRz7s7xRUj13QCfd8hKn6g==
+  version "1.0.30000973"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000973.tgz#2f8e8e54f9e6c5b7a631c9e69bfa1093d8cfd360"
+  integrity sha512-/F3t/Yo8LEdRSEPCmI15fLu5vepVh9UCg/9inJXF5AAfW7xRRJkbaM2ut52iRMQMnGCLQouLbFdbOA+VEFOIsg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -1808,9 +1803,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.137:
-  version "1.3.144"
-  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.144.tgz#d742d2c451090798303a4a5eea4f33f5e60f5d94"
-  integrity sha512-jNRFJpfNrYm5uJ4x0q9oYMOfbL0JPOlkNli8GS/5zEmCjnE5jAtoCo4BYajHiqSPqEeAjtTdItL4p7EZw+jSfg==
+  version "1.3.148"
+  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.148.tgz#5796c0d9eb0358d397163413b90bf376c5d8bf08"
+  integrity sha512-nuCOlXNlGMQmdzihIPGm2K3Yf3H1hke/1rK381i02pH8wNliJU9hVNnOi/xjmxt+mjABd/BzufP5nPHWKshLWA==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3685,9 +3680,9 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.21:
-  version "1.1.22"
-  resolved "https://registry.npmjs.org/node-releases/-/node-releases-1.1.22.tgz#d90cd5adc59ab9b0f377d4f532b09656399c88bf"
-  integrity sha512-O6XpteBuntW1j86mw6LlovBIwTe+sO2+7vi9avQffNeIW4upgnaCVm6xrBWH+KATz7mNNRNNeEpuWB7dT6Cr3w==
+  version "1.1.23"
+  resolved "https://registry.npmjs.org/node-releases/-/node-releases-1.1.23.tgz#de7409f72de044a2fa59c097f436ba89c39997f0"
+  integrity sha512-uq1iL79YjfYC0WXoHbC/z28q/9pOl8kSHaXdWmAAc8No+bDwqkZbzIJz55g/MUsPgSGm9LZ7QSUbzTcH5tz47w==
   dependencies:
     semver "^5.3.0"
 
@@ -4387,9 +4382,9 @@ rollup-pluginutils@2.6.0:
     micromatch "^3.1.10"
 
 rollup@*:
-  version "1.13.1"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-1.13.1.tgz#86a474c29df0f303ed31e4c8be5d81c1038beae8"
-  integrity sha512-TWBmVU5WS4wOy5Ij2qxrJYRUn/keECvStcXDpJSwgr95JZ6VFf1PDewiAk4VPf5vxr7drRJlxh9kYpxHveYOOg==
+  version "1.14.2"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-1.14.2.tgz#e97c496a6a6d6554c9750d0a028dc1848df04b42"
+  integrity sha512-rFFIbi8UqFdZMRwYj+wVGQFTPBu++CDfbdlM10OZIpxrsRIgafos3cbGhXWxXo5jyRBB98u+0lEkdsvdE0IiyQ==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "^12.0.3"
@@ -4816,9 +4811,9 @@ taffydb@2.6.2:
   integrity sha1-fLy2S1oUG2ou/CxdLGe04VCyomg=
 
 tar@^4:
-  version "4.4.9"
-  resolved "https://registry.npmjs.org/tar/-/tar-4.4.9.tgz#058fbb152f6fc45733e84585a40c39e59302e1b3"
-  integrity sha512-xisFa7Q2i3HOgfn+nmnWLGHD6Tm23hxjkx6wwGmgxkJFr6wxwXnJOdJYcZjL453PSdF0+bemO03+flAzkIdLBQ==
+  version "4.4.10"
+  resolved "https://registry.npmjs.org/tar/-/tar-4.4.10.tgz#946b2810b9a5e0b26140cf78bea6b0b0d689eba1"
+  integrity sha512-g2SVs5QIxvo6OLp0GudTqEf05maawKUxXru104iaayWA09551tFCTI8f1Asb4lPfkBr91k07iL4c11XO3/b0tA==
   dependencies:
     chownr "^1.1.1"
     fs-minipass "^1.2.5"

@@ -6,8 +6,4 @@ export function defaultsEnv () {
   if (!process.env.FaasRoot.endsWith('/')) {
     process.env.FaasRoot += '/';
   }
-
-  if (!process.env.FaasEnv) {
-    process.env.FaasEnv = 'local';
-  }
 }
