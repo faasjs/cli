@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 import deploy from './commands/deploy';
 
 const commander: Command = new Command();
-const logger = new Logger('@faasjs/cli');
+const logger = new Logger('Cli');
 
 // 设置命令
 commander

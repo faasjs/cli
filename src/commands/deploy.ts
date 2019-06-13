@@ -6,7 +6,7 @@ import { defaultsEnv } from '../helper';
 
 export async function action (name: string) {
   defaultsEnv();
-  const logger = new Logger('@faasjs/cli/deploy');
+  const logger = new Logger('Cli');
 
   let path = process.env.FaasRoot + name;
 
@@ -19,8 +19,7 @@ export async function action (name: string) {
 
   const deployer = new Deployer({
     root: process.env.FaasRoot!,
-    filename: path,
-    env: process.env.FaasEnv
+    filename: path
   });
 
   await deployer.deploy();

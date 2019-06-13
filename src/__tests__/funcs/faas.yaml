@@ -10,12 +10,9 @@ defaults:
         secretKey: secretKey
         region: ap-beijing
   plugins:
-    defaults:
-      function: function
-      http: http
-    function:
+    cloud_function:
       provider: tencentcloud
-      type: function
+      type: cloud_function
     http:
       provider: tencentcloud
       type: http
