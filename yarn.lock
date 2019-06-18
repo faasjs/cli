@@ -717,6 +717,14 @@
   dependencies:
     "@faasjs/logger" beta
 
+"@faasjs/server@beta":
+  version "0.0.0-alpha.3"
+  resolved "https://registry.npmjs.org/@faasjs/server/-/server-0.0.0-alpha.3.tgz#e379d3ad3ab5d4b40f5403a7b935043eead85023"
+  integrity sha512-4hjTSiZ4+5KwLJQ5/7t6Z76VnZEV0+/eTbtKyx/N/p/VDyvJLD7ul2SRv8owFMy1J3xV58EKGbhRZYR6x/ptBQ==
+  dependencies:
+    "@faasjs/load" beta
+    "@faasjs/logger" beta
+
 "@faasjs/tencentcloud@beta":
   version "0.0.0-alpha.24"
   resolved "https://registry.npmjs.org/@faasjs/tencentcloud/-/tencentcloud-0.0.0-alpha.24.tgz#bdec187764b6b094122cdb81991745a3c80fe3e4"
