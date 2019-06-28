@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import Logger from '@faasjs/logger';
 import { existsSync } from 'fs';
 import deploy from './commands/deploy';
+import server from './commands/server';
 
 const commander: Command = new Command();
 const logger = new Logger('Cli');
@@ -43,6 +44,7 @@ commander
 
 // 加载命令
 deploy(commander);
+server(commander);
 
 if (!process.env.CI && process.argv[0] !== 'fake') {
   commander.parse(process.argv);
