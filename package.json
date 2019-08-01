@@ -1,6 +1,6 @@
 {
   "name": "@faasjs/cli",
-  "version": "0.0.0-alpha.16",
+  "version": "0.0.0-alpha.17",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,7 +24,8 @@
     "@faasjs/func": "beta",
     "@faasjs/server": "beta",
     "@faasjs/test": "beta",
-    "commander": "*"
+    "commander": "*",
+    "@types/glob": "*"
   },
   "babel": {
     "presets": [

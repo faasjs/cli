@@ -4,9 +4,12 @@ import { defaultsEnv } from '../helper';
 
 export async function action (opts: {
   port: number;
+  cache: boolean;
 }) {
   defaultsEnv();
-  const server = new Server(process.env.FaasRoot!);
+  const server = new Server(process.env.FaasRoot!, {
+    cache: opts.cache
+  });
 
   const port = opts.port || 3000;
   server.listen(port);
@@ -25,5 +28,6 @@ Examples:
   yarn server`);
     })
     .option('-p, --port <port>', '端口号', '3000')
+    .option('-c, --cache', '是否启用缓存', false)
     .action(action);
 }

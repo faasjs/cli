@@ -717,10 +717,10 @@
   dependencies:
     "@faasjs/logger" beta
 
-"@faasjs/server@^0.0.0-alpha.7":
-  version "0.0.0-alpha.7"
-  resolved "https://registry.npmjs.org/@faasjs/server/-/server-0.0.0-alpha.7.tgz#bdb4d53477e791eb533eb3775ff0ed6454752698"
-  integrity sha512-Ksu+X5LRFDdNYsVJhNZV024Ci5Tahww4dWRHZF/yBsm9ArUFTBOAKY5l7WaFEcHI1cPFk0EBuSG+RpkaxFTumA==
+"@faasjs/server@beta":
+  version "0.0.0-alpha.14"
+  resolved "https://registry.npmjs.org/@faasjs/server/-/server-0.0.0-alpha.14.tgz#d4af2371e015d62461a4785d53d1c354f6f90602"
+  integrity sha512-nd0cZ9X+5GKvcwrMpEuFiLQuclFdEZB+HuF1G8olCjmHcflcHtV6tIQUh+15C8dZ6yTCHxTFPsyalKuuDJyGAQ==
   dependencies:
     "@faasjs/load" beta
     "@faasjs/logger" beta
@@ -948,6 +948,20 @@
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
+"@types/events@*":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
+  integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
+
+"@types/glob@*":
+  version "7.1.1"
+  resolved "https://registry.npmjs.org/@types/glob/-/glob-7.1.1.tgz#aa59a1c6e3fbc421e07ccd31a944c30eba521575"
+  integrity sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
+  dependencies:
+    "@types/events" "*"
+    "@types/minimatch" "*"
+    "@types/node" "*"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -979,6 +993,11 @@
   integrity sha512-MU1HIvWUme74stAoc3mgAi+aMlgKOudgEvQDIm1v4RkrDudBh1T+NFp5sftpBAdXdx1J0PbdpJ+M2EsSOi1djA==
   dependencies:
     "@types/jest-diff" "*"
+
+"@types/minimatch@*":
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
+  integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
 "@types/node@*", "@types/node@^12.0.8":
   version "12.0.10"

@@ -17,8 +17,14 @@ describe('deploy', function () {
     };
   });
 
-  test('should work', async function () {
+  test('a file', async function () {
     const res = await action('src/__tests__/funcs/basic.func.ts');
+
+    expect(res).toBeTruthy();
+  }, 30000);
+
+  test('a folder', async function () {
+    const res = await action('src/__tests__/funcs/');
 
     expect(res).toBeTruthy();
   }, 30000);
