@@ -27,7 +27,7 @@ export async function action (name: string) {
     if (!path.endsWith('/')) {
       path += '/';
     }
-    const files = globSync(path + '*.func.ts').concat(globSync(path + '**/*.func.ts'));
+    const files = [...new Set(globSync(path + '*.func.ts').concat(globSync(path + '**/*.func.ts')))];
     console.log(`[${process.env.FaasEnv}] 是否要发布以下云函数？`);
     console.log('');
     for (const file of files) {
