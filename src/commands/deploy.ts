@@ -5,34 +5,42 @@ import { createInterface } from 'readline';
 import { Deployer } from '@faasjs/deployer';
 import { defaultsEnv } from '../helper';
 
-export async function action (name: string) {
+export async function action(env: string, files: string[]) {
+  process.env.FaasEnv = env;
+
   defaultsEnv();
 
-  let path = process.env.FaasRoot + name;
+  const list: string[] = [];
 
-  if (!existsSync(path)) {
-    console.error(path);
-    throw Error(`File not found: ${path}`);
+  for (const name of files) {
+    let path = process.env.FaasRoot + name;
+
+    if (!existsSync(path)) {
+      throw Error(`File not found: ${path}`);
+    }
+
+    if (lstatSync(path).isFile()) {
+      list.push(path);
+    } else {
+      if (!path.endsWith('/')) {
+        path += '/';
+      }
+      list.push(...[...new Set(globSync(path + '*.func.ts').concat(globSync(path + '**/*.func.ts')))]);
+    }
   }
 
+  if (list.length < 1) throw Error('Not found files.');
+
   // 单个云函数文件直接部署
-  if (lstatSync(path).isFile()) {
+  if (list.length === 1) {
     const deployer = new Deployer({
       root: process.env.FaasRoot!,
-      filename: path
+      filename: list[0]
     });
     await deployer.deploy();
   } else {
-    // 文件夹
-    if (!path.endsWith('/')) {
-      path += '/';
-    }
-    const files = [...new Set(globSync(path + '*.func.ts').concat(globSync(path + '**/*.func.ts')))];
     console.log(`[${process.env.FaasEnv}] 是否要发布以下云函数？`);
-    console.log('');
-    for (const file of files) {
-      console.log(file);
-    }
+    console.log(list);
     console.log('');
     const readline = createInterface({
       input: process.stdin,
@@ -45,7 +53,7 @@ export async function action (name: string) {
         console.error('停止发布');
         return;
       } else {
-        for (const file of files) {
+        for (const file of list) {
           const deployer = new Deployer({
             root: process.env.FaasRoot!,
             filename: file
@@ -61,15 +69,15 @@ export async function action (name: string) {
 
 export default function (program: Command) {
   program
-    .command('deploy <name>')
+    .command('deploy <env> [files...]')
     .name('deploy')
     .description('发布')
     .on('--help', function () {
       console.log(`
 Examples:
-  yarn deploy services/demo.func.ts -e testing
-  yarn deploy services/demo.func.ts -e production
-  yarn deploy services/ -e testing`);
+  yarn deploy testing services/demo.func.ts
+  yarn deploy production services/demo.func.ts services/demo2.func.ts
+  yarn deploy testing services/`);
     })
     .action(action);
 }

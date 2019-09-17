@@ -18,6 +18,7 @@ commander
   .on('option:verbose', function (this: { verbose?: boolean }) {
     if (this.verbose) {
       process.env.verbose = '1';
+      process.env.FaasLog = 'debug';
     }
     logger.debug('已启用调试信息展示');
   })
