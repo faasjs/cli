@@ -4,6 +4,13 @@ import { existsSync } from 'fs';
 import deploy from './commands/deploy';
 import server from './commands/server';
 
+require('ts-node').register({
+  project: process.cwd() + '/tsconfig.json',
+  compilerOptions: {
+    module: 'commonjs'
+  }
+});
+
 const commander: Command = new Command();
 const logger = new Logger('Cli');
 
@@ -13,7 +20,7 @@ commander
   .usage('[command] [flags]')
   .option('-v --verbose', '显示调试日志')
   .option('-r --root <path>', '项目根目录，默认为命令执行时所在的目录')
-  .option('-e --env <staging>', '环境，默认为 local', 'local')
+  .option('-e --env <staging>', '环境，默认为 development', 'development')
 
   .on('option:verbose', function (this: { verbose?: boolean }) {
     if (this.verbose) {

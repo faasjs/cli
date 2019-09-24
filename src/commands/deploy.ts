@@ -5,7 +5,7 @@ import { createInterface } from 'readline';
 import { Deployer } from '@faasjs/deployer';
 import { defaultsEnv } from '../helper';
 
-export async function action(env: string, files: string[]) {
+export async function action (env: string, files: string[]) {
   process.env.FaasEnv = env;
 
   defaultsEnv();

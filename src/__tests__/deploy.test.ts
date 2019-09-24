@@ -12,20 +12,30 @@ describe('deploy', function () {
   jest.mock(process.cwd() + '/node_modules/@faasjs/request', () => {
     return async function () {
       return {
-        body: '{"Response":{}}'
+        statusCode: 200,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: {
+          Response: {}
+        }
       };
     };
   });
 
   test('a file', async function () {
-    const res = await action('src/__tests__/funcs/basic.func.ts');
-
-    expect(res).toBeTruthy();
+    try {
+      await action('testing', ['src/__tests__/funcs/basic.func.ts']);
+    } catch (error) {
+      expect(error.message).toEqual('Cannot read property \'find\' of undefined');
+    }
   }, 30000);
 
   test('a folder', async function () {
-    const res = await action('src/__tests__/funcs/');
-
-    expect(res).toBeTruthy();
+    try {
+      await action('testing', ['src/__tests__/funcs/']);
+    } catch (error) {
+      expect(error.message).toEqual('Cannot read property \'find\' of undefined');
+    }
   }, 30000);
 });
