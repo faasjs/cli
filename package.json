@@ -1,6 +1,6 @@
 {
   "name": "@faasjs/cli",
-  "version": "0.0.0-alpha.26",
+  "version": "0.0.0-beta.0",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -11,9 +11,8 @@
     "lint": "eslint --ext .ts --fix src",
     "build": "rm -rf ./lib && rollup -c",
     "test": "jest --expand",
-    "doc": "jsdoc2md --files ./lib/index.js > ./API.md",
     "ci": "yarn lint && yarn test --silent",
-    "commit": "yarn ci && yarn build && yarn doc"
+    "commit": "yarn ci && yarn build"
   },
   "files": [
     "lib"
@@ -25,7 +24,8 @@
     "@faasjs/test": "beta",
     "@types/glob": "*",
     "commander": "*",
-    "ts-node": "*"
+    "ts-node": "*",
+    "enquirer": "*"
   },
   "devDependencies": {
     "@faasjs/eslint-config-recommended": "beta"

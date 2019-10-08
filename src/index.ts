@@ -1,8 +1,10 @@
 import { Command } from 'commander';
 import Logger from '@faasjs/logger';
 import { existsSync } from 'fs';
-import deploy from './commands/deploy';
-import server from './commands/server';
+import { sep } from 'path';
+import New from './commands/new';
+import Deploy from './commands/deploy';
+import Server from './commands/server';
 
 require('ts-node').register({
   project: process.cwd() + '/tsconfig.json',
@@ -32,11 +34,11 @@ commander
   .on('option:root', function (this: { root?: string }) {
     if (this.root && existsSync(this.root)) {
       process.env.FaasRoot = this.root;
-      if (!this.root.endsWith('/')) {
-        process.env.FaasRoot += '/';
+      if (!this.root.endsWith(sep)) {
+        process.env.FaasRoot += sep;
       }
     } else {
-      throw Error(`can't find root path: ${this.root}`);
+      throw Error(`Can't find root path: ${this.root}`);
     }
     logger.debug('root: %s', process.env.FaasRoot);
   })
@@ -46,13 +48,14 @@ commander
     }
     logger.debug('env: %s', process.env.FaasEnv);
   })
-  .on('command:*', function () {
-    logger.error('未知指令');
+  .on('command:*', function (cmd) {
+    logger.error(`Unknown command: ${cmd}`);
   });
 
 // 加载命令
-deploy(commander);
-server(commander);
+New(commander);
+Deploy(commander);
+Server(commander);
 
 if (!process.env.CI && process.argv[0] !== 'fake') {
   commander.parse(process.argv);
